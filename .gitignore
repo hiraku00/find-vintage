@@ -60,3 +60,23 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcuserdata
+*.xccheckout
+*.xcscmblueprint
+*.xcscheme
+
+# Build
+build/
+*.ipa
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods
+Pods/
