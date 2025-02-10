@@ -1,11 +1,3 @@
-//
-//  ImagePicker.swift
-//  find-vintage
-//
-//  Created by hiraku on 2025/02/09.
-//
-
-
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
@@ -16,6 +8,8 @@ struct ImagePicker: UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = .camera
+        picker.cameraDevice = .rear // 背面カメラを明示
+        picker.cameraCaptureMode = .photo // 写真モードを指定
         return picker
     }
     

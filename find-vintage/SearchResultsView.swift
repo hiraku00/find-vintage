@@ -1,24 +1,21 @@
-//
-//  SearchResultsView.swift
-//  find-vintage
-//
-//  Created by hiraku on 2025/02/09.
-//
-
-
 import SwiftUI
 
 struct SearchResultsView: View {
     let results: [SearchResult]
     
     var body: some View {
-        List(results, id: \.title) { result in
+        List(results) { result in
             VStack(alignment: .leading) {
                 Text(result.title)
                     .font(.headline)
-                Text("Confidence: \(Int(result.confidence * 100))%")
+                Text(result.link)
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                        if let url = URL(string: result.link) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
             }
         }
         .navigationTitle("Search Results")
